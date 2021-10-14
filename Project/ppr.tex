@@ -1,0 +1,109 @@
+% CVPR 2022 Paper Template
+% based on the CVPR template provided by Ming-Ming Cheng (https://github.com/MCG-NKU/CVPR_Template)
+% modified and extended by Stefan Roth (stefan.roth@NOSPAMtu-darmstadt.de)
+
+\documentclass[10pt,twocolumn,letterpaper]{article}
+
+%%%%%%%%% PAPER TYPE  - PLEASE UPDATE FOR FINAL VERSION
+%\usepackage[review]{cvpr}      % To produce the REVIEW version
+\usepackage{cvpr}              % To produce the CAMERA-READY version
+%\usepackage[pagenumbers]{cvpr} % To force page numbers, e.g. for an arXiv version
+
+% Include other packages here, before hyperref.
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{booktabs}
+
+
+% It is strongly recommended to use hyperref, especially for the review version.
+% hyperref with option pagebackref eases the reviewers' job.
+% Please disable hyperref *only* if you encounter grave issues, e.g. with the
+% file validation for the camera-ready version.
+%
+% If you comment hyperref and then uncomment it, you should delete
+% ReviewTempalte.aux before re-running LaTeX.
+% (Or just hit 'q' on the first LaTeX run, let it finish, and you
+%  should be clear).
+\usepackage[pagebackref,breaklinks,colorlinks]{hyperref}
+
+
+% Support for easy cross-referencing
+\usepackage[capitalize]{cleveref}
+\crefname{section}{Sec.}{Secs.}
+\Crefname{section}{Section}{Sections}
+\Crefname{table}{Table}{Tables}
+\crefname{table}{Tab.}{Tabs.}
+
+
+%%%%%%%%% PAPER ID  - PLEASE UPDATE
+\def\cvprPaperID{*****} % *** Enter the CVPR Paper ID here
+\def\confName{CVPR}
+\def\confYear{2022}
+
+
+\begin{document}
+
+%%%%%%%%% TITLE - PLEASE UPDATE
+\title{4  - Preliminary Project Report}
+
+\author{Tadipatri Uday Kiran Reddy\\
+{\tt\small ee19btech11038@iith.ac.in}
+% For a paper whose authors are all at the same institution,
+% omit the following lines up until the closing ``}''.
+% Additional authors and addresses can be added with ``\and'',
+% just like the second author.
+% To save space, use either the email address or home page, not both
+\and
+Sahukari Chaitanya Varun\\
+{\tt\small ee19btech11040@iith.ac.in}
+\and
+L Pranay Kumar Reddy\\
+{\tt\small ai19btech11019@iith.ac.in}
+}
+\maketitle
+
+%%%%%%%%% ABSTRACT
+\begin{abstract}
+Summarize your problem statement here.
+\end{abstract}
+
+%%%%%%%%% BODY TEXT
+\section{Introduction}
+\label{sec:intro}
+Introduce the problem you are working on. This section should give a general introduction motivation for the problem. You can also describe the applications of your problem here. 
+
+Please number all of your sections and displayed equations as in these examples:
+\begin{equation}
+  E = m\cdot c^2
+  \label{eq:important}
+\end{equation}
+and
+\begin{equation}
+  v = a\cdot t.
+  \label{eq:also-important}
+\end{equation}
+%------------------------------------------------------------------------
+\section{Problem Statement}
+\label{sec:problem}
+State your problem with as much clarity as possible. If you have formulated an optimisation, describe it qualitatively and quantitatively.
+
+\section{Literature Review}
+\label{sec:literature}
+This section should clearly and in detail describe the literature you have read, and its relevance to the problem being solved. You are 
+
+\section{Preliminary Results}
+\label{sec:prelim_results}
+This is an optional section. This could include any results you have been able to replicate from the literature as well as any preliminary results that you want to report.
+
+%-------------------------------------------------------------------------
+\section{References}
+List all the references you have read.
+
+%%%%%%%%% REFERENCES
+{\small
+\bibliographystyle{ieee_fullname}
+\bibliography{egbib}
+}
+
+\end{document}
