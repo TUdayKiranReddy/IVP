@@ -83,11 +83,40 @@ With the evolution of high resolution digital cameras, snapshots have become a m
 %  v = a\cdot t.
 %  \label{eq:also-important}
 %\end{equation}
-Most of the times, our desired scenes are in always in motion, capturing this in camerea would introduce a fuzzy noise which is known as motion blur. This affect is also very severe in Autonoumus vehichle which utilise sophosticated visual SLAM algorithms on live feed coming from camera or LIDAR sensors which are in motion. Here the motion blur would supress the important features needed to be obtained from the video feed. Even with state-of-the-art technology of camera manufacturing, motion blur affect is not being improved while the resolution of the cameras are getting better and better.
-Mechanically stabilising the sensor like camera or LIDAR is very hard, so we have to use rigourus algorithms to process the image and many \textbf{recent works} like {} came up with both linear and non-linear models to deblur the image but the processed images are having still some blur and implementation of such sophosticated algorithm in edge devices like mobile phones, DSLR cameras, etc is computationally infeasible.
+Most of the times, our desired scenes are in always in motion, capturing this in camera would introduce a fuzzy noise which is known as motion blur. This affect is also very severe in Autonoumus vehichle which utilise sophosticated visual SLAM algorithms on live feed coming from camera or LIDAR sensors which are in motion. Here the motion blur would supress the important features needed to be obtained from the video feed. Even with state-of-the-art technology of camera manufacturing, motion blur affect is not being improved while the resolution of the cameras are getting better and better.\\
+
+Mechanically stabilising the sensor like camera or LIDAR is very hard, so we have to use rigourus algorithms to process the image and many \textbf{recent works} like {} came up with both linear and non-linear models to deblur the image but the processed images are having still some blur and implementation of such sophosticated algorithm in edge devices like mobile phones, DSLR cameras, etc is computationally infeasible. These works leave the fact behind that these motion blurs are caused due to relative motion between scene and camera. As all the mordern mobile phones and camera are equipped with Interial Measurement Units(\textit{IMU}), these actually measure velocity, acceleration, we can exploit this sensor data to deblur the images than only using raw image only as data. These \textbf{works} actually can up with system to exploit gyroscope sensor data, here they use Convonutaional Neural Network(CNN) with encoder and decoder framework, but these demand high computational power.\\
+
+In this work we propose a framework which deblurres images with blurred image and gyroscope sensor data, with help of deep-CNN and extrapolate it with Generative Adveriserial Network(\textit{GAN}) to enchance the quality and faster output of deblurred image.\\
+The below are the main contribuition of this paper.
+\begin{enumerate}
+	\item We propose a framework known as Motion blur Correction with Gyroscope using Generative Adverserial Networks(\textit{MCG-GAN})
+	\item We use MCG-GAN for deblurring images and show the improvement with existing state-of-art-works.
+\end{enumerate}
+The rest of the paper is organised as follows - We discuss the detailed problem statement in Section 2. We provide literature review in Section 3 which describes the related works and mentions important results which are going to be used in proposed framework. In section 4, we show results of recent works on deblurring. Finally, in section 5, We cite the references from we have used or described the paper.
 %------------------------------------------------------------------------
 \section{Problem Statement}
 \label{sec:problem}
+The problem statement concisely is image deblurring aided by gyroscopic sensing implemented through GAN's, building upon the deep neural net solution. Though the blur introduced can be from relative motion between the camera and picturing object itself, we focus only on deblurring image due to the relative movement of the camera device.\\
+The paper DeBlurGAN has already produced a benchmark result in finding the blur and rectifying it, but assumes the blur to be space invariant, i.e, performs blind deblurrring over the whole image. We can at first estimate a spatially variant motion field and blur kernels from a single image using deep networks, thereafter perform non-blind deconvolution. But often, this process requires input of multiple images which might not always be available. We here focus on single image deblurring approach. \\
+
+From the gyroscopic measurements, the rotation can be estimated as
+\begin{equation}
+    \frac{d \textbf{q(t)}}{dt} = \frac{1}{2}\textbf{q(t)} \bigodot \omega(t), \textbf{q(t1)=1}
+\end{equation}
+where $\omega$(t) is the 3-dimensional gyroscope measurement and $\bigodot$ denotes the quaternion product. The initial condition is given at the starting time of exposure t1 and the solution is computed at the end time of exposure t2.
+The motion blur caused by translation will depend on the scene depth, which is difficult to estimate from a single image and hence take these limitations into account when generating training data. Consider $\textbf{R(t)}$ and $\textbf{t}$(t) as rotation and translation of camera. Assuming the scene depth to be a constant $\textbf{d}$ , the motion of camera can be modeled as planar homograph as :
+\begin{equation}
+    \textbf{H(t)} = \textbf{K[R}(t) - \frac{\textbf{t}(t)\textbf{n}^{T}}{d}\textbf{]K}^{-1}
+\end{equation}
+where K is the intrinsic camera matrix obtained via calibration. By taking the translation to be zero, this simplifies to 
+\begin{equation}
+    \textbf{H(t)} = \textbf{KR}(t)\textbf{K}^{-1}
+\end{equation}
+By this we can compute the blur vector for every pixel, which gives us the blur map of the image.
+\section{Literature Review}
+\label{sec:literature}
+This section should clearly and in detail describe the literature you have read, and its relevance to the problem being solved. You are 
 
 
 \section{Literature Review}
