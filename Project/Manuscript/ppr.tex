@@ -116,13 +116,18 @@ where K is the intrinsic camera matrix obtained via calibration. By taking the t
 By this we can compute the blur vector for every pixel, which gives us the blur map of the image.
 \section{Literature Review}
 \label{sec:literature}
-This section should clearly and in detail describe the literature you have read, and its relevance to the problem being solved. You are 
+\subsection{Motion blur}
+This is a phenomenon observed in images taken when there is relative motion between camera and the scene, these are the artifacts observes in most common camera which are mostly rolling shutter cameras. Many of the recent works model the motion blur as Linear Space invariant system as follows.
+\begin{equation}
+I_{\textbf{b}} = \textbf{h}*I + \textbf{n}
+\end{equation}
+Where $I_{\textbf{b}}$ is Blurred image, \textbf{h} is kernal which models the motion blur more ofently so know as Point Space Function(\textit{PSF}), I is actual unblurred image and finally \textbf{n} is noise added while capturing the snap.
+\subsection{DeepGyro}
+The deblurring is based on fully-convolutional neural network which aims to produce a shar image given blurred image and gyro-based blur field. The netwrok architecture is similar to encoder-decoder network, where the input network consists of blurred RGB image and a gyro-based blur field which pass through series of convolutional and downsampling layers until the lowest resolution is reached. After the bottleneck, this low resolution image is expanded back into a full resolution image with help of upsampling layers. Skip connections are used to allow information sharing between encoder and decoder.\\
+For training of data, the blurred and sharp images with gyro-based blur fields are produced by taking the visual-inertial dataset which consists of various types camera motion resulting in different blur fields. The blur fields are themselves further distorted to exact and noisy blur fields for training a robust model. The paper states of utilizing nearly 100k images and was evaluated on both synthetically and naturally blurred images.
+\\
 
-
-\section{Literature Review}
-\label{sec:literature}
-This section should clearly and in detail describe the literature you have read, and its relevance to the problem being solved. You are 
-
+In regard to the current paper we are working on, this refered paper serves as model for extracting the gyro data and also  help in generating the datasets required for training and testing the model. This model is embedded in initial stages of our model which is then build further by GANs.
 \section{Preliminary Results}
 \label{sec:prelim_results}
 This is an optional section. This could include any results you have been able to replicate from the literature as well as any preliminary results that you want to report.

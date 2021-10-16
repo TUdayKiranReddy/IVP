@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.8.2)  16 OCT 2021 19:26
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.8.2)  16 OCT 2021 20:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -483,14 +483,12 @@ File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 
 ]
 No file ppr.bbl.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 140.
-[2
-
-]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 140.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 145.
+[2]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 145.
  (./ppr.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 140.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 140.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 145.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 145.
 
 
 Package rerunfilecheck Warning: File `ppr.out' has changed.
@@ -498,18 +496,15 @@ Package rerunfilecheck Warning: File `ppr.out' has changed.
 (rerunfilecheck)                or use package `bookmark'.
 
 Package rerunfilecheck Info: Checksums for `ppr.out':
-(rerunfilecheck)             Before: 8922F0B9B777E312F27AA03B62CBFD87;260
-(rerunfilecheck)             After:  3580439C794A437866CC6EFAF80FEDCE;314.
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
+(rerunfilecheck)             Before: 4FFF5E57261ECEBF339A2B32889C154C;322
+(rerunfilecheck)             After:  9B78995BADA104BDB32327518F90149C;381.
  ) 
 Here is how much of TeX's memory you used:
- 10194 strings out of 481239
- 165788 string characters out of 5920378
- 450809 words of memory out of 5000000
- 25279 multiletter control sequences out of 15000+600000
- 553409 words of font info for 73 fonts, out of 8000000 for 9000
+ 10199 strings out of 481239
+ 165847 string characters out of 5920378
+ 451809 words of memory out of 5000000
+ 25280 multiletter control sequences out of 15000+600000
+ 555623 words of font info for 75 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  49i,9n,46p,1024b,323s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
@@ -523,10 +518,10 @@ sfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
 ></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/te
 xlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dis
 t/fonts/type1/urw/times/utmri8a.pfb>
-Output written on ppr.pdf (2 pages, 111265 bytes).
+Output written on ppr.pdf (2 pages, 114476 bytes).
 PDF statistics:
- 92 PDF objects out of 1000 (max. 8388607)
- 76 compressed objects within 1 object stream
- 14 named destinations out of 1000 (max. 500000)
- 41 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 97 PDF objects out of 1000 (max. 8388607)
+ 81 compressed objects within 1 object stream
+ 16 named destinations out of 1000 (max. 500000)
+ 49 words of extra memory for PDF output out of 10000 (max. 10000000)
 
