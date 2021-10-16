@@ -45,7 +45,7 @@
 \begin{document}
 
 %%%%%%%%% TITLE - PLEASE UPDATE
-\title{4  - Preliminary Project Report}
+\title{Team 4 - Preliminary Project Report}
 
 \author{Tadipatri Uday Kiran Reddy\\
 {\tt\small ee19btech11038@iith.ac.in}
@@ -58,35 +58,37 @@
 Sahukari Chaitanya Varun\\
 {\tt\small ee19btech11040@iith.ac.in}
 \and
-L Pranay Kumar Reddy\\
-{\tt\small ai19btech11019@iith.ac.in}
+L. Pranay Kumar Reddy\\
+{\tt\small ai19btech11010@iith.ac.in}
 }
 \maketitle
 
 %%%%%%%%% ABSTRACT
 \begin{abstract}
-Summarize your problem statement here.
+With the evolution of high resolution digital cameras, snapshots have become a most common way to record and share visual data and experiences taken through mobile phones and tablets. But as humans, it is difficult to keep a stiff hold while capturing image, especially, when image is to be captured on move introducing blur. Though there lot of external tools for frame stabilization such as gimbal, mounting it on can be difficult at times. Hence, we propose this paper to solve this problem by processing the image with the aid of gyroscope sensed data which is attached with the camera device, helping to deblur the image. We aim to implement this deblurring with the help of deep convolution nets and extrapolate it with GAN's to give better quality and faster output than compared to traditional CNN's. With faster computation capabilities, we can extend this work to stabilise the video feed with lower frame rates.
 \end{abstract}
 
 %%%%%%%%% BODY TEXT
 \section{Introduction}
 \label{sec:intro}
-Introduce the problem you are working on. This section should give a general introduction motivation for the problem. You can also describe the applications of your problem here. 
-
-Please number all of your sections and displayed equations as in these examples:
-\begin{equation}
-  E = m\cdot c^2
-  \label{eq:important}
-\end{equation}
-and
-\begin{equation}
-  v = a\cdot t.
-  \label{eq:also-important}
-\end{equation}
+%Introduce the problem you are working on. This section should give a general introduction motivation for the problem. You can also describe the applications of your problem here. 
+%
+%Please number all of your sections and displayed equations as in these examples:
+%\begin{equation}
+%  E = m\cdot c^2
+%  \label{eq:important}
+%\end{equation}
+%and
+%\begin{equation}
+%  v = a\cdot t.
+%  \label{eq:also-important}
+%\end{equation}
+Most of the times, our desired scenes are in always in motion, capturing this in camerea would introduce a fuzzy noise which is known as motion blur. This affect is also very severe in Autonoumus vehichle which utilise sophosticated visual SLAM algorithms on live feed coming from camera or LIDAR sensors which are in motion. Here the motion blur would supress the important features needed to be obtained from the video feed. Even with state-of-the-art technology of camera manufacturing, motion blur affect is not being improved while the resolution of the cameras are getting better and better.
+Mechanically stabilising the sensor like camera or LIDAR is very hard, so we have to use rigourus algorithms to process the image and many \textbf{recent works} like {} came up with both linear and non-linear models to deblur the image but the processed images are having still some blur and implementation of such sophosticated algorithm in edge devices like mobile phones, DSLR cameras, etc is computationally infeasible.
 %------------------------------------------------------------------------
 \section{Problem Statement}
 \label{sec:problem}
-State your problem with as much clarity as possible. If you have formulated an optimisation, describe it qualitatively and quantitatively.
+
 
 \section{Literature Review}
 \label{sec:literature}
