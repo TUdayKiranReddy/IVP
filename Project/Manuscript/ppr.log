@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.8.2)  16 OCT 2021 20:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.8.2)  17 OCT 2021 22:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -481,32 +481,37 @@ File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 ) [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 
-]
+] [2]
+<images/deepgyro.png, id=68, 739.76375pt x 263.98625pt>
+File: images/deepgyro.png Graphic file (type png)
+<use images/deepgyro.png>
+Package pdftex.def Info: images/deepgyro.png  used on input line 162.
+(pdftex.def)             Requested size: 521.70282pt x 170.71492pt.
+
+Overfull \hbox (284.56688pt too wide) in paragraph at lines 162--163
+ [][] 
+ []
+
 No file ppr.bbl.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 145.
-[2]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 145.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 184.
+[3
+
+ <./images/deepgyro.png>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 184.
  (./ppr.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 145.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 145.
-
-
-Package rerunfilecheck Warning: File `ppr.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `ppr.out':
-(rerunfilecheck)             Before: 4FFF5E57261ECEBF339A2B32889C154C;322
-(rerunfilecheck)             After:  9B78995BADA104BDB32327518F90149C;381.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 184.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 184.
+Package rerunfilecheck Info: File `ppr.out' has not changed.
+(rerunfilecheck)             Checksum: F62562F0D93A49AA230D1AB37A5DD629;531.
  ) 
 Here is how much of TeX's memory you used:
- 10199 strings out of 481239
- 165847 string characters out of 5920378
+ 10229 strings out of 481239
+ 166268 string characters out of 5920378
  451809 words of memory out of 5000000
- 25280 multiletter control sequences out of 15000+600000
- 555623 words of font info for 75 fonts, out of 8000000 for 9000
+ 25295 multiletter control sequences out of 15000+600000
+ 557808 words of font info for 77 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 49i,9n,46p,1024b,323s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 49i,9n,46p,1014b,360s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist
@@ -518,10 +523,10 @@ sfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
 ></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/te
 xlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dis
 t/fonts/type1/urw/times/utmri8a.pfb>
-Output written on ppr.pdf (2 pages, 114476 bytes).
+Output written on ppr.pdf (3 pages, 591670 bytes).
 PDF statistics:
- 97 PDF objects out of 1000 (max. 8388607)
- 81 compressed objects within 1 object stream
- 16 named destinations out of 1000 (max. 500000)
- 49 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 130 PDF objects out of 1000 (max. 8388607)
+ 110 compressed objects within 2 object streams
+ 26 named destinations out of 1000 (max. 500000)
+ 78 words of extra memory for PDF output out of 10000 (max. 10000000)
 

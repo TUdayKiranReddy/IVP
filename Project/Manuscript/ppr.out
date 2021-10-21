@@ -3,5 +3,7 @@
 \BOOKMARK [1][-]{section.3}{. Literature Review}{}% 3
 \BOOKMARK [2][-]{subsection.3.1}{. Motion blur}{section.3}% 4
 \BOOKMARK [2][-]{subsection.3.2}{. DeepGyro}{section.3}% 5
-\BOOKMARK [1][-]{section.4}{. Preliminary Results}{}% 6
-\BOOKMARK [1][-]{section.5}{. References}{}% 7
+\BOOKMARK [2][-]{subsection.3.3}{. Generative adversarial networks \(GANs\)}{section.3}% 6
+\BOOKMARK [1][-]{section.4}{. Preliminary Results}{}% 7
+\BOOKMARK [2][-]{subsection.4.1}{. DeepGyro}{section.4}% 8
+\BOOKMARK [1][-]{section.5}{. References}{}% 9

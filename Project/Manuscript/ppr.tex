@@ -59,36 +59,36 @@ Sahukari Chaitanya Varun\\
 {\tt\small ee19btech11040@iith.ac.in}
 \and
 L. Pranay Kumar Reddy\\
-{\tt\small ai19btech11010@iith.ac.in}
+{\tt\small ai19btech11019@iith.ac.in}
 }
 \maketitle
 
 %%%%%%%%% ABSTRACT
 \begin{abstract}
-With the evolution of high resolution digital cameras, snapshots have become a most common way to record and share visual data and experiences taken through mobile phones and tablets. But as humans, it is difficult to keep a stiff hold while capturing image, especially, when image is to be captured on move introducing blur. Though there lot of external tools for frame stabilization such as gimbal, mounting it on can be difficult at times. Hence, we propose this paper to solve this problem by processing the image with the aid of gyroscope sensed data which is attached with the camera device, helping to deblur the image. We aim to implement this deblurring with the help of deep convolution nets and extrapolate it with GAN's to give better quality and faster output than compared to traditional CNN's. With faster computation capabilities, we can extend this work to stabilise the video feed with lower frame rates.
+With the evolution of high-resolution digital cameras, snapshots have become the most common way to record and share visual data and experiences taken through mobile phones and tablets. But as humans, it is challenging to keep a stiff hold while capturing an image, especially when the image is to be captured on the move; it introduces blur. Though there lot of external tools for frame stabilization, such as gimbal, mounting it on can be challenging at times. Hence, we propose this paper to solve this problem by processing the image with the aid of gyroscope sensed data  attached with the camera device, helping to deblur the image. We aim to implement this deblurring with the help of deep convolution nets and extrapolate it with GAN's to give better quality and faster output than  traditional CNN's. We can extend this work to stabilise the video feed with lower frame rates with faster computation capabilities.
 \end{abstract}
 
 %%%%%%%%% BODY TEXT
 \section{Introduction}
 \label{sec:intro}
-%Introduce the problem you are working on. This section should give a general introduction motivation for the problem. You can also describe the applications of your problem here. 
-%
-%Please number all of your sections and displayed equations as in these examples:
-%\begin{equation}
-%  E = m\cdot c^2
-%  \label{eq:important}
-%\end{equation}
-%and
-%\begin{equation}
-%  v = a\cdot t.
-%  \label{eq:also-important}
-%\end{equation}
-Most of the times, our desired scenes are in always in motion, capturing this in camera would introduce a fuzzy noise which is known as motion blur. This affect is also very severe in Autonoumus vehichle which utilise sophosticated visual SLAM algorithms on live feed coming from camera or LIDAR sensors which are in motion. Here the motion blur would supress the important features needed to be obtained from the video feed. Even with state-of-the-art technology of camera manufacturing, motion blur affect is not being improved while the resolution of the cameras are getting better and better.\\
+% Introduce the problem you are working on. This section should give a general introduction motivation for the problem. You can also describe the applications of your problem here. 
 
-Mechanically stabilising the sensor like camera or LIDAR is very hard, so we have to use rigourus algorithms to process the image and many \textbf{recent works} like {} came up with both linear and non-linear models to deblur the image but the processed images are having still some blur and implementation of such sophosticated algorithm in edge devices like mobile phones, DSLR cameras, etc is computationally infeasible. These works leave the fact behind that these motion blurs are caused due to relative motion between scene and camera. As all the mordern mobile phones and camera are equipped with Interial Measurement Units(\textit{IMU}), these actually measure velocity, acceleration, we can exploit this sensor data to deblur the images than only using raw image only as data. These \textbf{works} actually can up with system to exploit gyroscope sensor data, here they use Convonutaional Neural Network(CNN) with encoder and decoder framework, but these demand high computational power.\\
+% Please number all of your sections and displayed equations as in these examples:
+% \begin{equation}
+%   E = m\cdot c^2
+%   \label{eq:important}
+% \end{equation}
+% and
+% \begin{equation}
+%   v = a\cdot t.
+%   \label{eq:also-important}
+% \end{equation}
+Our desired scenes are always in motion; capturing this in the camera would introduce a fuzzy noise known as motion blur. This effect is also very severe in Autonomous vehicles which utilise sophisticated visual SLAM algorithms on live feed coming from cameras or LIDAR sensors that are in motion. Here the motion blur would suppress the crucial features needed to be obtained from the video feed. Even with state-of-the-art technology of camera manufacturing, the motion blur effect is not being improved while the camera resolution is getting better and better.\\
 
-In this work we propose a framework which deblurres images with blurred image and gyroscope sensor data, with help of deep-CNN and extrapolate it with Generative Adveriserial Network(\textit{GAN}) to enchance the quality and faster output of deblurred image.\\
-The below are the main contribuition of this paper.
+Mechanically stabilising the sensor like camera or LIDAR is very hard, so we have to use rigorous algorithms to process the image and many recent works like {} came up with both linear and non-linear models to deblur the image but the processed images are having still some blur and implementation of such sophisticated algorithm in edge devices like mobile phones, DSLR cameras, etc is computationally infeasible. These works leave the fact behind that these motion blurs are caused due to relative motion between scene and camera. As all the modern mobile phones and camera are equipped with Interial Measurement Units(\textit{IMU}), these actually measure velocity, acceleration, we can exploit this sensor data to deblur the images than only using raw image only as data. These \textbf{works} actually can up with system to exploit gyroscope sensor data, here they use Convonutaional Neural Network(CNN) with encoder and decoder framework, but these demand high computational power.\\
+
+In this work we propose a framework which deblurres images with blurred image and gyroscope sensor data, with help of deep-CNN and extrapolate it with Generative Adversarial Network(\textit{GAN}) to enchance the quality and faster output of deblurred image.\\
+The below are the main contribution of this paper.
 \begin{enumerate}
 	\item We propose a framework known as Motion blur Correction with Gyroscope using Generative Adverserial Networks(\textit{MCG-GAN})
 	\item We use MCG-GAN for deblurring images and show the improvement with existing state-of-art-works.
@@ -113,7 +113,14 @@ where K is the intrinsic camera matrix obtained via calibration. By taking the t
 \begin{equation}
     \textbf{H(t)} = \textbf{KR}(t)\textbf{K}^{-1}
 \end{equation}
-By this we can compute the blur vector for every pixel, which gives us the blur map of the image.
+By this we can compute the blur vector for every pixel, which gives us the blur map of the image \textbf{h}.
+
+Now, as we have a blurred image $I_{\textbf{b}}$, our goal is to predict a sharp image I using GANs, such that 
+\begin{equation}
+I_{\textbf{b}} = \textbf{h}*I + \textbf{n}
+\end{equation}
+where h is the kernel which models the motion blur also called as blur kernel, n is the noise and * denotes convolution.
+
 \section{Literature Review}
 \label{sec:literature}
 \subsection{Motion blur}
@@ -121,20 +128,52 @@ This is a phenomenon observed in images taken when there is relative motion betw
 \begin{equation}
 I_{\textbf{b}} = \textbf{h}*I + \textbf{n}
 \end{equation}
-Where $I_{\textbf{b}}$ is Blurred image, \textbf{h} is kernal which models the motion blur more ofently so know as Point Space Function(\textit{PSF}), I is actual unblurred image and finally \textbf{n} is noise added while capturing the snap.
+Where $I_{\textbf{b}}$ is Blurred image, \textbf{h} is kernal which models the motion blur more ofently so know as Point Space Function(\textit{PSF}), I is actual unblurred image and finally \textbf{n} is noise added while capturing the snap.\\
+
+In this paper, we use gyroscope data and take into consideration that blur kernel is space variant.
+\begin{equation}
+I_{\textbf{b}} = f\left(I, \textbf{g}(\textbf{t}), \textbf{n}\right)
+\end{equation}
+Where f(\textbf{.}) is non-linear space invariant function, this is learnt from dataset using GANs which is further more discussed in Section 3.3.
 \subsection{DeepGyro}
 The deblurring is based on fully-convolutional neural network which aims to produce a shar image given blurred image and gyro-based blur field. The netwrok architecture is similar to encoder-decoder network, where the input network consists of blurred RGB image and a gyro-based blur field which pass through series of convolutional and downsampling layers until the lowest resolution is reached. After the bottleneck, this low resolution image is expanded back into a full resolution image with help of upsampling layers. Skip connections are used to allow information sharing between encoder and decoder.\\
 For training of data, the blurred and sharp images with gyro-based blur fields are produced by taking the visual-inertial dataset which consists of various types camera motion resulting in different blur fields. The blur fields are themselves further distorted to exact and noisy blur fields for training a robust model. The paper states of utilizing nearly 100k images and was evaluated on both synthetically and naturally blurred images.
 \\
 
 In regard to the current paper we are working on, this refered paper serves as model for extracting the gyro data and also  help in generating the datasets required for training and testing the model. This model is embedded in initial stages of our model which is then build further by GANs.
+
+\subsection{Generative adversarial networks (GANs)}
+Generative adversarial networks (GANs), introduced by Ian Goodfellow provides a way to learn deep representations without extensively annotated training data. They achieve this through deriving back-propagation signals through a competitive process also called min-max game involving a pair of networks known as the discriminator and the generator. 
+\\
+
+The generator receives noise as an input and generates a sample. A discriminator receives a real and generated sample and is trying to distinguish between them. The goal of the generator is to fool the discriminator by generating perceptually convincing samples that can not be distinguished from the real one. The game between the generator G and discriminator D is the minimax objective:
+\begin{equation}
+min_{G} max_{D} E_{x \sim P_{\textbf{r}}}[log(D(x))] + E_{z \sim P_{\textbf{g}}}[1 - log(D(G(z)))]
+\end{equation}\textbf{}
+
+where $P_{\textbf{r}}$ is the data distribution and $P_{\textbf{g}}$ is the model distribution, defined by z $\sim P_{z}$, the input z is a sample from a simple noise distribution
+
 \section{Preliminary Results}
 \label{sec:prelim_results}
-This is an optional section. This could include any results you have been able to replicate from the literature as well as any preliminary results that you want to report.
+\subsection{DeepGyro}
+\vspace{-0.5cm}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=2.2\columnwidth,height=6cm]{images/deepgyro.png}
+    \caption{ DeepGyro performance for increasing levels of blur, Blurred images (green)}
+    \label{fig: result_deepgyro}
+\end{figure}
 
 %-------------------------------------------------------------------------
 \section{References}
-List all the references you have read.
+\begin{enumerate}
+    \item \href{https://arxiv.org/abs/1810.00986}{Gyroscope-Aided Motion Deblurring with Deep Networks}, Janne Mustaniemi, Juho Kannala, Simo Särkkä, Jiri Matas, Janne Heikkilä
+    \item \href{https://arxiv.org/abs/1406.2661}{Generative Adversarial Networks},
+Ian J. Goodfellow, Jean Pouget-Abadie, Mehdi Mirza, Bing Xu, David Warde-Farley, Sherjil Ozair, Aaron Courville, Yoshua Bengio
+    \item \href{https://arxiv.org/abs/1711.07064}{DeblurGAN: Blind Motion Deblurring Using Conditional Adversarial Networks},
+Orest Kupyn, Volodymyr Budzan, Mykola Mykhailych, Dmytro Mishkin, Jiri Matas
+\end{enumerate}
+
 
 %%%%%%%%% REFERENCES
 {\small
