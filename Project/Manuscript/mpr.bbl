@@ -1,0 +1,73 @@
+\begin{thebibliography}{10}\itemsep=-1pt
+
+\bibitem{Aittala_2018_ECCV}
+Miika Aittala and Fredo Durand.
+\newblock Burst image deblurring using permutation invariant convolutional
+  neural networks.
+\newblock In {\em The European Conference on Computer Vision (ECCV)}, September
+  2018.
+
+\bibitem{article}
+Jian-Feng Cai, Hui Ji, Chaoqiang Liu, and Zuowei Shen.
+\newblock Blind motion deblurring using multiple images.
+\newblock {\em Journal of Computational Physics}, 228:5057--5071, 08 2009.
+
+\bibitem{10.1145/1141911.1141956}
+Rob Fergus, Barun Singh, Aaron Hertzmann, Sam~T. Roweis, and William~T.
+  Freeman.
+\newblock Removing camera shake from a single photograph.
+\newblock {\em ACM Trans. Graph.}, 25(3):787–794, July 2006.
+
+\bibitem{6126276}
+Michael Hirsch, Christian~J. Schuler, Stefan Harmeling, and Bernhard
+  Schölkopf.
+\newblock Fast removal of non-uniform camera shake.
+\newblock In {\em 2011 International Conference on Computer Vision}, pages
+  463--470, 2011.
+
+\bibitem{7780574}
+Zhe Hu, Lu Yuan, Stephen Lin, and Ming-Hsuan Yang.
+\newblock Image deblurring using smartphone inertial sensors.
+\newblock In {\em 2016 IEEE Conference on Computer Vision and Pattern
+  Recognition (CVPR)}, pages 1855--1864, 2016.
+
+\bibitem{9444479}
+Seowon Ji, Jun-Pyo Hong, Jeongmin Lee, Seung-Jin Baek, and Sung-Jea Ko.
+\newblock Robust single image deblurring using gyroscope sensor.
+\newblock {\em IEEE Access}, 9:80835--80846, 2021.
+
+\bibitem{mustaniemi2018gyroscopeaided}
+Janne Mustaniemi, Juho Kannala, Simo Särkkä, Jiri Matas, and Janne Heikkilä.
+\newblock Gyroscope-aided motion deblurring with deep networks, 2018.
+
+\bibitem{8237771}
+T~M Nimisha, Akash~Kumar Singh, and A~N Rajagopalan.
+\newblock Blur-invariant deep learning for blind-deblurring.
+\newblock In {\em 2017 IEEE International Conference on Computer Vision
+  (ICCV)}, pages 4762--4770, 2017.
+
+\bibitem{6618928}
+Uwe Schmidt, Carsten Rother, Sebastian Nowozin, Jeremy Jancsary, and Stefan
+  Roth.
+\newblock Discriminative non-blind deblurring.
+\newblock In {\em 2013 IEEE Conference on Computer Vision and Pattern
+  Recognition}, pages 604--611, 2013.
+
+\bibitem{Sindelar2013ImageDI}
+Ondrej Sindelar and Filip {\vS}roubek.
+\newblock Image deblurring in smartphone devices using built-in inertial
+  measurement sensors.
+\newblock {\em Journal of Electronic Imaging}, 22, 2013.
+
+\bibitem{8578443}
+Subeesh Vasu, Venkatesh~Reddy Maligireddy, and A.~N. Rajagopalan.
+\newblock Non-blind deblurring: Handling kernel uncertainty with cnns.
+\newblock In {\em 2018 IEEE/CVF Conference on Computer Vision and Pattern
+  Recognition}, pages 3272--3281, 2018.
+
+\bibitem{8820138}
+Qing Wang, Jun Tan, Tianzhang Xing, Feng Chen, and Jinping Niu.
+\newblock Sid: Sensor-assisted image deblurring system for mobile devices.
+\newblock {\em IEEE Access}, 7:146607--146619, 2019.
+
+\end{thebibliography}

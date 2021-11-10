@@ -1,0 +1,9 @@
+\BOOKMARK [1][-]{section.1}{. Further literature review}{}% 1
+\BOOKMARK [1][-]{section.2}{. Deep Gyro mustaniemi2018gyroscopeaided Implementation}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{. Data for Playing}{section.2}% 3
+\BOOKMARK [2][-]{subsection.2.2}{. Generating Blur Fields}{section.2}% 4
+\BOOKMARK [2][-]{subsection.2.3}{. Network Architecture}{section.2}% 5
+\BOOKMARK [2][-]{subsection.2.4}{. Training and Results}{section.2}% 6
+\BOOKMARK [1][-]{section.3}{. MCG-GAN Network}{}% 7
+\BOOKMARK [2][-]{subsection.3.1}{. Dataset for Model}{section.3}% 8
+\BOOKMARK [2][-]{subsection.3.2}{. Network Architecture}{section.3}% 9
