@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.8.2)  10 NOV 2021 23:07
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.8.2)  10 NOV 2021 23:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -334,7 +334,28 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip52
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 26.
+(/usr/share/texlive/texmf-dist/tex/latex/lipsum/lipsum.sty
+(/usr/share/texlive/texmf-dist/tex/latex/l3kernel/expl3.sty
+Package: expl3 2020-02-14 L3 programming layer (loader) 
+
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
+File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
+\l__kernel_color_stack_int=\count288
+\l__pdf_internal_box=\box49
+))
+(/usr/share/texlive/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
+Package: xparse 2020-02-14 L3 Experimental document command parser
+\l__xparse_current_arg_int=\count289
+\g__xparse_grabber_int=\count290
+\l__xparse_m_args_int=\count291
+\l__xparse_v_nesting_int=\count292
+)
+Package: lipsum 2019/01/02 v2.2 150 paragraphs of Lorem Ipsum dummy text
+
+(/usr/share/texlive/texmf-dist/tex/latex/lipsum/lipsum.ltd.tex
+File: lipsum.ltd.tex 2019/01/02 v2.2 The Lorem ipsum dummy text
+))
+Package hyperref Info: Option `colorlinks' set `true' on input line 27.
 
 
 ! LaTeX Error: Option clash for package hyperref.
@@ -343,7 +364,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.41 
+l.42 
      
 The package hyperref has already been loaded with options:
   []
@@ -371,34 +392,29 @@ Package cleveref Info: always capitalise cross-reference names on input line 78
 30.
 Package cleveref Info: always capitalise cross-reference names on input line 78
 52.
-)
-(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
-File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
-\l__kernel_color_stack_int=\count288
-\l__pdf_internal_box=\box49
-)
-(./mpr.aux)
+) (./mpr.aux)
 \openout1 = `mpr.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 57.
-LaTeX Font Info:    ... okay on input line 57.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 57.
-LaTeX Font Info:    ... okay on input line 57.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 57.
-LaTeX Font Info:    ... okay on input line 57.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 57.
-LaTeX Font Info:    ... okay on input line 57.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 57.
-LaTeX Font Info:    ... okay on input line 57.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 57.
-LaTeX Font Info:    ... okay on input line 57.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 57.
-LaTeX Font Info:    ... okay on input line 57.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 57.
-LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
 LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 5
-7.
- (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ptm.fd
+8.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 Package caption Info: Begin \AtBeginDocument code.
@@ -416,34 +432,34 @@ Package color Info: Driver file: pdftex.def on input line 147.
 )
 (/usr/share/texlive/texmf-dist/tex/latex/eepic/epic.sty
 Enhancements to Picture Environment. Version 1.2 - Released June 1, 1986
-\@@multicnt=\count289
-\d@lta=\count290
+\@@multicnt=\count293
+\d@lta=\count294
 \@delta=\dimen173
 \@@delta=\dimen174
-\@gridcnt=\count291
-\@joinkind=\count292
+\@gridcnt=\count295
+\@joinkind=\count296
 \@dotgap=\dimen175
 \@ddotgap=\dimen176
-\@x@diff=\count293
-\@y@diff=\count294
+\@x@diff=\count297
+\@y@diff=\count298
 \x@diff=\dimen177
 \y@diff=\dimen178
 \@dotbox=\box50
-\num@segments=\count295
-\num@segmentsi=\count296
+\num@segments=\count299
+\num@segmentsi=\count300
 \@datafile=\read2
 ) (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count297
+\scratchcounter=\count301
 \scratchdimen=\dimen179
 \scratchbox=\box51
-\nofMPsegments=\count298
-\nofMParguments=\count299
+\nofMPsegments=\count302
+\nofMParguments=\count303
 \everyMPshowfont=\toks28
-\MPscratchCnt=\count300
+\MPscratchCnt=\count304
 \MPscratchDim=\dimen180
-\MPnumerator=\count301
-\makeMPintoPDFobject=\count302
+\MPnumerator=\count305
+\makeMPintoPDFobject=\count306
 \everyMPtoPDFconversion=\toks29
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -456,7 +472,7 @@ e
 ))
 \AtBeginShipoutBox=\box52
 Package atbegshi Info: Package `everyshi' patched.
-Package hyperref Info: Link coloring ON on input line 57.
+Package hyperref Info: Link coloring ON on input line 58.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
@@ -467,116 +483,51 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 (/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count303
+\c@section@level=\count307
 )
-LaTeX Info: Redefining \ref on input line 57.
-LaTeX Info: Redefining \pageref on input line 57.
-LaTeX Info: Redefining \nameref on input line 57.
+LaTeX Info: Redefining \ref on input line 58.
+LaTeX Info: Redefining \pageref on input line 58.
+LaTeX Info: Redefining \nameref on input line 58.
 
 (./mpr.out) (./mpr.out)
 \@outlinefile=\write3
 \openout3 = `mpr.out'.
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 77.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 78.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 77.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 78.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 7
-7.
+8.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
-
-LaTeX Warning: Citation `article' on page 1 undefined on input line 100.
-
-
-LaTeX Warning: Citation `10.1145/1141911.1141956' on page 1 undefined on input 
-line 100.
-
-
-LaTeX Warning: Citation `Aittala_2018_ECCV' on page 1 undefined on input line 1
-00.
-
-
-LaTeX Warning: Citation `8578443' on page 1 undefined on input line 100.
-
-
-LaTeX Warning: Citation `6618928' on page 1 undefined on input line 100.
-
-
-LaTeX Warning: Citation `8237771' on page 1 undefined on input line 100.
-
-
-LaTeX Warning: Citation `6126276' on page 1 undefined on input line 100.
-
-
-LaTeX Warning: Citation `7780574' on page 1 undefined on input line 100.
-
-
-LaTeX Warning: Citation `Sindelar2013ImageDI' on page 1 undefined on input line
- 100.
-
-
-LaTeX Warning: Citation `9444479' on page 1 undefined on input line 100.
-
-
-LaTeX Warning: Citation `8820138' on page 1 undefined on input line 100.
-
-
-LaTeX Warning: Citation `mustaniemi2018gyroscopeaided' on page 1 undefined on i
-nput line 100.
-
-
-LaTeX Warning: Citation `Sindelar2013ImageDI' on page 1 undefined on input line
- 100.
-
-
-LaTeX Warning: Citation `9444479' on page 1 undefined on input line 100.
-
-
-LaTeX Warning: Citation `8820138' on page 1 undefined on input line 100.
-
-
-LaTeX Warning: Citation `mustaniemi2018gyroscopeaided' on page 1 undefined on i
-nput line 100.
-
-
-LaTeX Warning: Citation `mustaniemi2018gyroscopeaided' on page 1 undefined on i
-nput line 100.
-
-
-LaTeX Warning: Citation `7780574' on page 1 undefined on input line 100.
-
-
-LaTeX Warning: Citation `mustaniemi2018gyroscopeaided' on page 1 undefined on i
-nput line 101.
-
-<images/dat_gen.png, id=40, 973.6375pt x 291.0875pt>
+<images/dat_gen.png, id=60, 973.6375pt x 291.0875pt>
 File: images/dat_gen.png Graphic file (type png)
 <use images/dat_gen.png>
-Package pdftex.def Info: images/dat_gen.png  used on input line 107.
+Package pdftex.def Info: images/dat_gen.png  used on input line 108.
 (pdftex.def)             Requested size: 521.70059pt x 170.71855pt.
 
-Overfull \hbox (24.84435pt too wide) in paragraph at lines 107--108
+Overfull \hbox (24.84435pt too wide) in paragraph at lines 108--109
  [][] 
  []
 
-<images/architecture.png, id=42, 1001.7425pt x 242.9075pt>
+<images/architecture.png, id=62, 1001.7425pt x 242.9075pt>
 File: images/architecture.png Graphic file (type png)
 <use images/architecture.png>
-Package pdftex.def Info: images/architecture.png  used on input line 113.
+Package pdftex.def Info: images/architecture.png  used on input line 114.
 (pdftex.def)             Requested size: 521.71922pt x 142.26154pt.
 
-Overfull \hbox (24.86298pt too wide) in paragraph at lines 113--114
+Overfull \hbox (24.86298pt too wide) in paragraph at lines 114--115
  [][] 
  []
 
@@ -590,82 +541,138 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 ]
-<images/car.png, id=52, 513.92pt x 513.92pt>
+<images/car.png, id=84, 513.92pt x 513.92pt>
 File: images/car.png Graphic file (type png)
 <use images/car.png>
-Package pdftex.def Info: images/car.png  used on input line 124.
+Package pdftex.def Info: images/car.png  used on input line 125.
 (pdftex.def)             Requested size: 149.05838pt x 149.0565pt.
 
 
 Package caption Warning: \captionsetup{subtype*=...} or \subcaptionof
-(caption)                outside box or environment on input line 125.
+(caption)                outside box or environment on input line 126.
 See the caption package documentation for explanation.
 
 
 Package caption Warning: \subcaption
-(caption)                outside box or environment on input line 125.
+(caption)                outside box or environment on input line 126.
 See the caption package documentation for explanation.
 
-<images/car_x.png, id=53, 513.92pt x 513.92pt>
+<images/car_x.png, id=85, 513.92pt x 513.92pt>
 File: images/car_x.png Graphic file (type png)
 <use images/car_x.png>
-Package pdftex.def Info: images/car_x.png  used on input line 126.
+Package pdftex.def Info: images/car_x.png  used on input line 127.
 (pdftex.def)             Requested size: 149.05838pt x 149.0565pt.
 
 Package caption Warning: \subcaption
-(caption)                outside box or environment on input line 127.
+(caption)                outside box or environment on input line 128.
 See the caption package documentation for explanation.
 
-<images/car_y.png, id=54, 513.92pt x 513.92pt>
+<images/car_y.png, id=86, 513.92pt x 513.92pt>
 File: images/car_y.png Graphic file (type png)
 <use images/car_y.png>
-Package pdftex.def Info: images/car_y.png  used on input line 128.
+Package pdftex.def Info: images/car_y.png  used on input line 129.
 (pdftex.def)             Requested size: 149.05838pt x 149.0565pt.
-
-Package caption Warning: \subcaption
-(caption)                outside box or environment on input line 129.
-See the caption package documentation for explanation.
-
 
 Package caption Warning: \subcaption
 (caption)                outside box or environment on input line 130.
 See the caption package documentation for explanation.
 
+
+Package caption Warning: \subcaption
+(caption)                outside box or environment on input line 131.
+See the caption package documentation for explanation.
+
 [2 <./images/dat_gen.png> <./images/architecture.png>]
-<images/rrp.png, id=64, 493.845pt x 768.8725pt>
-File: images/rrp.png Graphic file (type png)
-<use images/rrp.png>
-Package pdftex.def Info: images/rrp.png  used on input line 147.
-(pdftex.def)             Requested size: 248.42812pt x 386.76997pt.
 
-Overfull \hbox (11.29218pt too wide) in paragraph at lines 147--148
-[][] 
- []
+LaTeX Warning: Reference `fig:ExampleBlurField' on page 3 undefined on input li
+ne 147.
 
-<images/se.png, id=66, 490.83376pt x 333.245pt>
-File: images/se.png Graphic file (type png)
-<use images/se.png>
-Package pdftex.def Info: images/se.png  used on input line 232.
-(pdftex.def)             Requested size: 248.42812pt x 168.66621pt.
-
-Overfull \hbox (11.29218pt too wide) in paragraph at lines 232--233
-[][] 
- []
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
+File: images/car.png Graphic file (type png)
+<use images/car.png>
+Package pdftex.def Info: images/car.png  used on input line 153.
+(pdftex.def)             Requested size: 118.56796pt x 118.56767pt.
+<images/car_dg.png, id=95, 513.92pt x 513.92pt>
+File: images/car_dg.png Graphic file (type png)
+<use images/car_dg.png>
+Package pdftex.def Info: images/car_dg.png  used on input line 158.
+(pdftex.def)             Requested size: 118.56796pt x 118.56767pt.
+<images/church.png, id=96, 513.92pt x 513.92pt>
+File: images/church.png Graphic file (type png)
+<use images/church.png>
+Package pdftex.def Info: images/church.png  used on input line 167.
+(pdftex.def)             Requested size: 118.56796pt x 118.56767pt.
+<images/church_dg.png, id=97, 513.92pt x 513.92pt>
+File: images/church_dg.png Graphic file (type png)
+<use images/church_dg.png>
+Package pdftex.def Info: images/church_dg.png  used on input line 172.
+(pdftex.def)             Requested size: 118.56796pt x 118.56767pt.
+<images/entrance.png, id=98, 513.92pt x 513.92pt>
+File: images/entrance.png Graphic file (type png)
+<use images/entrance.png>
+Package pdftex.def Info: images/entrance.png  used on input line 181.
+(pdftex.def)             Requested size: 118.56796pt x 118.56767pt.
+<images/entrance_dg.png, id=99, 513.92pt x 513.92pt>
+File: images/entrance_dg.png Graphic file (type png)
+<use images/entrance_dg.png>
+Package pdftex.def Info: images/entrance_dg.png  used on input line 186.
+(pdftex.def)             Requested size: 118.56796pt x 118.56767pt.
+<images/flower.png, id=100, 513.92pt x 513.92pt>
+File: images/flower.png Graphic file (type png)
+<use images/flower.png>
+Package pdftex.def Info: images/flower.png  used on input line 195.
+(pdftex.def)             Requested size: 118.56796pt x 118.56767pt.
+<images/flower_dg.png, id=101, 513.92pt x 513.92pt>
+File: images/flower_dg.png Graphic file (type png)
+<use images/flower_dg.png>
+Package pdftex.def Info: images/flower_dg.png  used on input line 200.
+(pdftex.def)             Requested size: 118.56796pt x 118.56767pt.
 [3 <./images/car.png (PNG copy)> <./images/car_x.png (PNG copy)> <./images/car_
-y.png (PNG copy)> <./images/rrp.png>]
+y.png (PNG copy)> <./images/car_dg.png (PNG copy)> <./images/church.png (PNG co
+py)> <./images/church_dg.png (PNG copy)> <./images/entrance.png (PNG copy)> <./
+images/entrance_dg.png (PNG copy)> <./images/flower.png (PNG copy)> <./images/f
+lower_dg.png (PNG copy)>]
+<images/rubiks.png, id=113, 513.92pt x 513.92pt>
+File: images/rubiks.png Graphic file (type png)
+<use images/rubiks.png>
+Package pdftex.def Info: images/rubiks.png  used on input line 326.
+(pdftex.def)             Requested size: 118.56796pt x 118.56767pt.
+<images/rubiks _db.png, id=114, 513.92pt x 513.92pt>
+File: images/rubiks _db.png Graphic file (type png)
+<use images/rubiks _db.png>
+Package pdftex.def Info: images/rubiks _db.png  used on input line 331.
+(pdftex.def)             Requested size: 118.56796pt x 118.56767pt.
+<images/bottle.png, id=115, 513.92pt x 513.92pt>
+File: images/bottle.png Graphic file (type png)
+<use images/bottle.png>
+Package pdftex.def Info: images/bottle.png  used on input line 340.
+(pdftex.def)             Requested size: 118.56796pt x 118.56767pt.
+<images/bottle_db.png, id=116, 513.92pt x 513.92pt>
+File: images/bottle_db.png Graphic file (type png)
+<use images/bottle_db.png>
+Package pdftex.def Info: images/bottle_db.png  used on input line 345.
+(pdftex.def)             Requested size: 118.56796pt x 118.56767pt.
+<images/Before.png, id=119, 523.20468pt x 529.22719pt>
+File: images/Before.png Graphic file (type png)
+<use images/Before.png>
+Package pdftex.def Info: images/Before.png  used on input line 367.
+(pdftex.def)             Requested size: 237.13242pt x 170.71281pt.
+
 
 LaTeX Warning: Reference `fig: before_training' on page 4 undefined on input li
-ne 278.
+ne 372.
 
 
 LaTeX Warning: Reference `fig: after_training' on page 4 undefined on input lin
-e 278.
+e 372.
 
-(./mpr.bbl
+<images/After.png, id=120, 531.48563pt x 531.48563pt>
+File: images/After.png Graphic file (type png)
+<use images/After.png>
+Package pdftex.def Info: images/After.png  used on input line 376.
+(pdftex.def)             Requested size: 237.13887pt x 170.71954pt.
+(./mpr.bbl [4 <./images/rubiks.png (PNG copy)> <./images/rubiks _db.png (PNG co
+py)> <./images/bottle.png (PNG copy)> <./images/bottle_db.png (PNG copy)> <./im
+ages/Before.png> <./images/After.png>]
 ! Undefined control sequence.
 l.57 Ondrej Sindelar and Filip {\vS
                                    }roubek.
@@ -676,12 +683,14 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 )
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 291.
- [4 <./images/se.png>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 291.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 385.
+ [5
+
+]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 385.
  (./mpr.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 291.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 291.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 385.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 385.
 Package rerunfilecheck Info: File `mpr.out' has not changed.
 (rerunfilecheck)             Checksum: 131D348A107C9BEAA03F9BC7AC2B7B69;625.
 
@@ -693,22 +702,22 @@ LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
- 10149 strings out of 481239
- 164934 string characters out of 5920378
- 449347 words of memory out of 5000000
- 25201 multiletter control sequences out of 15000+600000
+ 10780 strings out of 481239
+ 182256 string characters out of 5920378
+ 582587 words of memory out of 5000000
+ 25800 multiletter control sequences out of 15000+600000
  559981 words of font info for 79 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 49i,9n,46p,2652b,451s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 49i,9n,46p,2652b,476s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/
 type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times
 /utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on mpr.pdf (4 pages, 1400104 bytes).
+Output written on mpr.pdf (5 pages, 4523324 bytes).
 PDF statistics:
- 125 PDF objects out of 1000 (max. 8388607)
- 101 compressed objects within 2 object streams
- 33 named destinations out of 1000 (max. 500000)
- 108 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 168 PDF objects out of 1000 (max. 8388607)
+ 132 compressed objects within 2 object streams
+ 40 named destinations out of 1000 (max. 500000)
+ 163 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -15,7 +15,8 @@
 \usepackage{amssymb}
 \usepackage{booktabs}
 \usepackage{hyperref}
-
+\usepackage{subcaption,graphicx}
+\usepackage{lipsum}
 \hypersetup{
     colorlinks=true,
     linkcolor=blue,
@@ -99,7 +100,7 @@ With the evolution of high-resolution digital cameras, snapshots have become the
 \section{Further literature review}
 With the ever-growing classical image processing problem, deblurring is also a key research area that has witnessed significant progress. There are major three types of deblurring; Burst mode assisted deblurring, non-blind deblurring and blind deblurring(also known as single image-based deblurring);  Burst-mode assisted deblurring, also known as deblurring using multiple images, as it describes series of images are captured for a scene and using these the deblurred images are estimated recent works like \cite{article}, \cite{10.1145/1141911.1141956} focused on statistics approach to estimate blur-kernels or Point Spread Function (PSF) and applying deconvolution on the image to get the latent image. Authors of \cite{Aittala_2018_ECCV} use the Convolutional Neural Network(CNN) approach to deblur the image; here, the PSF approach is not adopted. In non-blind deblurring, blur-kernel or PSF available priorly these works \cite{8578443}, \cite{6618928} render perfect images but this method is not practically feasible as the PSF is not priorly known always. In blind deblurring, alone single image is exploited to deblur the image, classically blur-kernel is estimated later a  deconvolution operation is applied on the image to get the latent image. Authors of \cite{8237771}, \cite{6126276} use a statistical approach to estimate the PSF, albeit they assume that blur is space-invariant. In simpler words, they assume the blur is linear throughout the image, albeit images experience non-linear blur. Intuitively, we see that estimating the blur kernel followed by deconvolution is not flawless and adds artefacts that may render an undesirable latent image. Smartphones or DSLR cameras are equipped with sensors like gyroscopes, accelerometers and magnetometers. Recent works \cite{7780574}, \cite{Sindelar2013ImageDI}, \cite{9444479}, \cite{8820138}, \cite{mustaniemi2018gyroscopeaided} exploit such data to deblur the images but works \cite{Sindelar2013ImageDI}, \cite{9444479}, \cite{8820138}, \cite{mustaniemi2018gyroscopeaided} take an impractical assumption that blue is space-invariant and also assume that sensor data is reliable. But these are prone to time delay, miscalibration and anomalies. Authors in \cite{mustaniemi2018gyroscopeaided} showed incredible results despite these assumptions; here, they built their architecture based on Encoder-Decoder CNN with a pre-computed 2-channel blur field. In \cite{7780574}, the authors have considered the sensor’s non-idealities. The authors also compute the blur-field with sensor data but also refine it by solving an optimisation problem. 
 \section{Deep Gyro \cite{mustaniemi2018gyroscopeaided} Implementation}
-This section covers on the implementation of deblurring of images using gyroscope-extracted data with help a deep neural network. This deblurring is based fully-convolutional neural network. For working on this problem in a supervised manner we need data.
+This section covers on the \href{https://drive.google.com/drive/folders/1Lh97DlusYyZEkIuu9gvTZXaLcDK3dlXc?usp=sharing}{implementation} of deblurring of images using gyroscope-extracted data with help a deep neural network. This deblurring is based fully-convolutional neural network. For working on this problem in a supervised manner we need data.
 \subsection{Data for Playing}
 For training the network, we need a set of blurred and sharp images along with the corresponding gyro-based blur fields. But manually capturing this data data in real time is difficult. So we use gyroscope readings to generate realistic blur fields and blurred images. For this purpose, the visual-inertial dataset has been used which is a set diverse sequences in different scenes for evaluating odometry. IMU measurements in the dataset has the measurements of accelerations and angular velocities on 3 axes at 200 Hz. We extract the gyro data for generating the blur fields. Here, two different blur fields are generated referred to as "exact" and "noisy" , where the exact blur field is used in generating the blurred image and the noisy blur field is given to network as additional input to help in deblurring. 
 \begin{figure*}[h]
@@ -139,121 +140,214 @@ This network architecture is similar to that of encoder-decoder network which is
 %    % \source{Gyroscope-Aided Motion Deblurring with Deep Networks}
 %    \label{fig: result_deepgyro}
 %\end{figure*}
-As shown the network has 5 convolution layers for downsampling and 5 for upsampling. The output of each convolution layer is padded accordingly. The stride is 2 in 2$\times$ 2 max pooling in downsampling and the upconcolution layers have 2$\times$2 convolution that halves the number of feature channels. 
+As shown the network has 5 convolution layers for downsampling and 5 for upsampling. The output of each convolution layer is padded accordingly.The stride is 2 in 2$\times$ 2 max pooling in downsampling and the upconcolution layers have 2$\times$2 convolution that halves the number of feature channels. 
+
 \subsection{Training and Results}
-The model uses Adam optimizer for fitting the data. ReLu-activation used for all layers except the last layer which has linear activation.  The original model was trained on 100k images. So we use the weights of the pre-trained model to test for the initial phase. The results are shown in Figure \ref{fig: ExampleBlurField}
 
-\begin{figure}
-\includegraphics[width=.5\textwidth]{images/rrp.png}
-\caption{Results replicated from the paper(blurred on left, deblurred on right)}
-\label{fig: ExampleBlurField}
+The model uses Adam optimizer for fitting the data. ReLu-activation used for all layers except the last layer which has linear activation. Original model was trained on 100k images, we used the weights of the pre-trained model to test for the initial phase.The results are as shown in Figure \ref{fig:ExampleBlurField}
+
+\begin{figure}[h]
+  \centering
+  \begin{subfigure}{.5\columnwidth}
+    \centering
+    \includegraphics[width=\linewidth]{images/car.png}
+  \end{subfigure}%
+  \hfill
+  \begin{subfigure}{.5\columnwidth}
+    \centering
+    \includegraphics[width=\linewidth]{images/car_dg.png}
+  \end{subfigure}%
+  \hfill
 \end{figure}
+\vspace{-1cm}
+\begin{figure}[h]
+  \centering
+  \begin{subfigure}{.5\columnwidth}
+    \centering
+    \includegraphics[width=\linewidth]{images/church.png}
+  \end{subfigure}%
+  \hfill
+  \begin{subfigure}{.5\columnwidth}
+    \centering
+    \includegraphics[width=\linewidth]{images/church_dg.png}
+  \end{subfigure}%
+  \hfill
+\end{figure}
+\vspace{-1cm}
+\begin{figure}[h]
+  \centering
+  \begin{subfigure}{.5\columnwidth}
+    \centering
+    \includegraphics[width=\linewidth]{images/entrance.png}
+  \end{subfigure}%
+  \hfill
+  \begin{subfigure}{.5\columnwidth}
+    \centering
+    \includegraphics[width=\linewidth]{images/entrance_dg.png}
+  \end{subfigure}%
+  \hfill
+\end{figure}
+\vspace{-1cm}
+\begin{figure}[h]
+  \centering
+  \begin{subfigure}{.5\columnwidth}
+    \centering
+    \includegraphics[width=\linewidth]{images/flower.png}
+  \end{subfigure}%
+  \hfill
+  \begin{subfigure}{.5\columnwidth}
+    \centering
+    \includegraphics[width=\linewidth]{images/flower_dg.png}
+  \end{subfigure}%
+  \hfill
+  \caption{Results replicated from the paper(blurred on left, deblurred on right)}
+  \label{fig:ExampleBlurField}
+\end{figure}
+% \vspace{-1cm}
+% \begin{figure}[h]
+%   \centering
+%   \begin{subfigure}{.5\columnwidth}
+%     \centering
+%     \includegraphics[width=\linewidth]{images/bridge.png}
+%   \end{subfigure}%
+%   \hfill
+%   \begin{subfigure}{.5\columnwidth}
+%     \centering
+%     \includegraphics[width=\linewidth]{images/bridge_dg.png}
+%   \end{subfigure}%
+%   \hfill
+%   \caption{Results replicated from the paper(blurred on left, deblurred on right)}
+%   \label{fig : ExampleBlurField}
+% \end{figure}
 
-%\begin{figure*}[!H]
-%\centering
-%\begin{subfigure}{.5\textwidth}
-%  \centering
-%  \includegraphics[width=.5\linewidth,height=3cm]{images/bridge.png}
-%\end{subfigure}%
-%\begin{subfigure}{.5\textwidth}
-%  \centering
-%  \includegraphics[width=.5\linewidth,height=3cm]{images/bridge_dg.png}\hfill
-%\end{subfigure}
-%\begin{subfigure}{.5\textwidth}
-%  \centering
-%  \includegraphics[width=.5\linewidth]{images/car.png}
-%\end{subfigure}%
-%\begin{subfigure}{.5\textwidth}
-%  \centering
-%  \includegraphics[width=.5\linewidth]{images/car_dg.png}\hfill
-%\end{subfigure}
-%\begin{subfigure}{.5\textwidth}
-%  \centering
-%  \includegraphics[width=.5\linewidth]{images/church.png}
-%\end{subfigure}%
-%\begin{subfigure}{.5\textwidth}
-%  \centering
-%  \includegraphics[width=.5\linewidth]{images/church_dg.png}\hfill
-%\end{subfigure}
-%\begin{subfigure}{.5\textwidth}
-%  \centering
-%  \includegraphics[width=.5\linewidth]{images/entrance.png}
-%\end{subfigure}%
-%\begin{subfigure}{.5\textwidth}
-%  \centering
-%  \includegraphics[width=.5\linewidth]{images/entrance_dg.png}\hfill
-%\end{subfigure}
-%\begin{subfigure}{.5\textwidth}
-%  \centering
-%  \includegraphics[width=.5\linewidth]{images/flower.png}
-%\end{subfigure}%
-%\begin{subfigure}{.5\textwidth}
-%  \centering
-%  \includegraphics[width=.5\linewidth]{images/flower_dg.png}\hfill
-%\end{subfigure}
-%% \begin{subfigure}{.5\textwidth}
-%%   \centering
-%%   \includegraphics[width=.5\linewidth]{images/graffiti.png}
-%% \end{subfigure}%
-%% \begin{subfigure}{.5\textwidth}
-%%   \centering
-%%   \includegraphics[width=.5\linewidth]{images/graffiti_dg.png}\hfill
-%% \end{subfigure}
-%% \begin{subfigure}{.5\textwidth}
-%%   \centering
-%%   \includegraphics[width=.5\linewidth]{images/office.png}
-%% \end{subfigure}%
-%% \begin{subfigure}{.5\textwidth}
-%%   \centering
-%%   \includegraphics[width=.5\linewidth]{images/office_dg.png}\hfill
-%% \end{subfigure}
-%% \begin{subfigure}{.5\textwidth}
-%%   \centering
-%%   \includegraphics[width=.5\linewidth]{images/posters.png}
-%% \end{subfigure}%
-%% \begin{subfigure}{.5\textwidth}
-%%   \centering
-%%   \includegraphics[width=.5\linewidth]{images/posters_dg.png}\hfill
-%% \end{subfigure}
-%% \begin{subfigure}{.5\textwidth}
-%%   \centering
-%%   \includegraphics[width=.5\linewidth]{images/tower.png}
-%% \end{subfigure}%
-%% \begin{subfigure}{.5\textwidth}
-%%   \centering
-%%   \includegraphics[width=.5\linewidth]{images/tower_dg.png}\hfill
-%% \end{subfigure}
-%\caption{Results replicated from the paper(blurred on left, deblurred on right)}
-%\label{fig: ExampleBlurField}
-%\end{figure*}
+
+% \begin{figure}[h]
+%     \centering
+%     \subfloat[Blurred]{{\includegraphics[width=.25\columnwidth,height=3cm]{images/bridge.png}}}
+%     \qquad
+%     \subfloat[Deblurred]{{\includegraphics[width=.25\columnwidth,height=3cm]{images/bridge_dg.png}}}
+% \end{figure}
+% \begin{figure}[!H]
+% \centering
+% \begin{subfigure}{.5\textwidth}
+%   \includegraphics[width=.5\columnwidth,height=3cm]{images/bridge.png}
+% \end{subfigure}%
+% \hspace{\columnwidth}
+% \begin{subfigure}{.5\textwidth}
+%   \includegraphics[width=.5\columnwidth,height=3cm]{images/bridge_dg.png}
+% \end{subfigure}
+% \begin{subfigure}{.5\textwidth}
+%   \centering
+%   \includegraphics[width=.5\linewidth]{images/car.png}
+% \end{subfigure}%
+% \begin{subfigure}{.5\textwidth}
+%   \centering
+%   \includegraphics[width=.5\linewidth]{images/car_dg.png}\hfill
+% \end{subfigure}
+% \begin{subfigure}{.5\textwidth}
+%   \centering
+%   \includegraphics[width=.5\linewidth]{images/church.png}
+% \end{subfigure}%
+% \begin{subfigure}{.5\textwidth}
+%   \centering
+%   \includegraphics[width=.5\linewidth]{images/church_dg.png}\hfill
+% \end{subfigure}
+% \begin{subfigure}{.5\textwidth}
+%   \centering
+%   \includegraphics[width=.5\linewidth]{images/entrance.png}
+% \end{subfigure}%
+% \begin{subfigure}{.5\textwidth}
+%   \centering
+%   \includegraphics[width=.5\linewidth]{images/entrance_dg.png}\hfill
+% \end{subfigure}
+% \begin{subfigure}{.5\textwidth}
+%   \centering
+%   \includegraphics[width=.5\linewidth]{images/flower.png}
+% \end{subfigure}%
+% \begin{subfigure}{.5\textwidth}
+%   \centering
+%   \includegraphics[width=.5\linewidth]{images/flower_dg.png}\hfill
+% \end{subfigure}
+% % \begin{subfigure}{.5\textwidth}
+% %   \centering
+% %   \includegraphics[width=.5\linewidth]{images/graffiti.png}
+% % \end{subfigure}%
+% % \begin{subfigure}{.5\textwidth}
+% %   \centering
+% %   \includegraphics[width=.5\linewidth]{images/graffiti_dg.png}\hfill
+% % \end{subfigure}
+% % \begin{subfigure}{.5\textwidth}
+% %   \centering
+% %   \includegraphics[width=.5\linewidth]{images/office.png}
+% % \end{subfigure}%
+% % \begin{subfigure}{.5\textwidth}
+% %   \centering
+% %   \includegraphics[width=.5\linewidth]{images/office_dg.png}\hfill
+% % \end{subfigure}
+% % \begin{subfigure}{.5\textwidth}
+% %   \centering
+% %   \includegraphics[width=.5\linewidth]{images/posters.png}
+% % \end{subfigure}%
+% % \begin{subfigure}{.5\textwidth}
+% %   \centering
+% %   \includegraphics[width=.5\linewidth]{images/posters_dg.png}\hfill
+% % \end{subfigure}
+% % \begin{subfigure}{.5\textwidth}
+% %   \centering
+% %   \includegraphics[width=.5\linewidth]{images/tower.png}
+% % \end{subfigure}%
+% % \begin{subfigure}{.5\textwidth}
+% %   \centering
+% %   \includegraphics[width=.5\linewidth]{images/tower_dg.png}\hfill
+% % \end{subfigure}
+% \caption{Results replicated from the paper(blurred on left, deblurred on right)}
+% \label{fig: ExampleBlurField}
+% \end{figure}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\newpage
 In Figure \ref{fig:real_pic}, few snapshots of real world are taken and deblurred.
-\begin{figure}[!h]
-
-	\includegraphics[width=.5\textwidth]{images/se.png}
-	\caption{Simulated Examples(blurred on left, deblurred on right)}
-    \label{fig:real_pic}
+\begin{figure}[h]
+  \centering
+  \begin{subfigure}{.5\columnwidth}
+    \centering
+    \includegraphics[width=\linewidth]{images/rubiks.png}
+  \end{subfigure}%
+  \hfill
+  \begin{subfigure}{.5\columnwidth}
+    \centering
+    \includegraphics[width=\linewidth]{images/rubiks _db.png}
+  \end{subfigure}%
+  \hfill
 \end{figure}
-%\begin{figure}[!h]
-%    \begin{subfigure}{.5\textwidth}
-%      \centering
-%      \includegraphics[width=.5\columnwidth]{images/bottle.png}
-%    \end{subfigure}%
-%    \begin{subfigure}{.5\textwidth}
-%      \centering
-%      \includegraphics[width=.5\columnwidth]{images/bottle_db.png}
-%    \end{subfigure}
-%    \begin{subfigure}{.5\textwidth}
-%      \centering
-%      \includegraphics[width=.5\linewidth]{images/rubiks.png}
-%    \end{subfigure}%
-%    \begin{subfigure}{.5\textwidth}
-%      \centering
-%      \includegraphics[width=.5\columnwidth]{images/rubiks _db.png}
-%    \end{subfigure}
-%    \caption{Simulated Examples(blurred on left, deblurred on right)}
-%    \label{fig:real_pic}
-%\end{figure}
-
+\vspace{-1cm}
+\begin{figure}[h]
+  \centering
+  \begin{subfigure}{.5\columnwidth}
+    \centering
+    \includegraphics[width=\linewidth]{images/bottle.png}
+  \end{subfigure}%
+  \hfill
+  \begin{subfigure}{.5\columnwidth}
+    \centering
+    \includegraphics[width=\linewidth]{images/bottle_db.png}
+  \end{subfigure}%
+  \hfill
+  \caption{Simulated Examples(blurred on left, deblurred on right)}
+  \label{fig:real_pic}
+\end{figure}
 \section{MCG-GAN Network}
 
 \subsection{Dataset for Model}
@@ -268,21 +362,21 @@ This model starts with a small image, which is slowly scaled up with Conv2DTrans
 \\
 The optimizer we use is also very important, in our model we decided to use Adam optimizer as Adam combines the best properties of the AdaGrad and RMSProp algorithms to provide an optimization algorithm that can handle sparse gradients on noisy problems.
 
-%\begin{figure}[h]
-%    \centering
-%    \includegraphics[width=1\columnwidth,height=6cm]{images/Before.png}
-%    \caption{ Before training}
-%    \label{fig: before_training}
-%\end{figure}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1\columnwidth,height=6cm]{images/Before.png}
+    \caption{ Before training}
+    \label{fig: before_training}
+\end{figure}
 
 In Figure \ref{fig: before_training} we have 100 images after adding noises. Which in our case means before training and after training these images for 320 epochs we got Figure \ref{fig: after_training}.
 
-%\begin{figure}[h]
-%    \centering
-%    \includegraphics[width=1\columnwidth,height=6cm]{images/After.png}
-%    \caption{ After training}
-%    \label{fig: after_training}
-%\end{figure}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1\columnwidth,height=6cm]{images/After.png}
+    \caption{ After training}
+    \label{fig: after_training}
+\end{figure}
 %%%%%%%%% REFERENCES
 {\small
 \bibliographystyle{ieee_fullname}
